@@ -6,7 +6,6 @@ class_name Cookie
 var spawn_manager : SpawnManager
 var SPEED : float
 
-signal cracked(score : int)
 
 func _ready() -> void:
 	SPEED = stats.speed
@@ -26,6 +25,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Cracker:
 		queue_free()
 		body.queue_free()
-		cracked.emit(1)
+		EventBus.cracked.emit(1)
 	
 	pass
