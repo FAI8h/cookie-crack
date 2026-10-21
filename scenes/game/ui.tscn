@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c86uayvcrkqp3" path="res://scripts/game/ui.gd" id="1_w1udo"]
 [ext_resource type="Script" uid="uid://g4a7tu4eke3v" path="res://scripts/game/score.gd" id="2_jbjmg"]
 [ext_resource type="Texture2D" uid="uid://bfwyv0if6oegj" path="res://assets/settings-svgrepo-com.svg" id="3_jbjmg"]
+[ext_resource type="Script" uid="uid://cr6o4nuahk7rv" path="res://scripts/game/resume_timer_label.gd" id="4_ek8ox"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w15o4"]
 content_margin_left = 4.0
@@ -59,6 +60,24 @@ grow_horizontal = 0
 grow_vertical = 2
 texture = ExtResource("3_jbjmg")
 expand_mode = 1
+
+[node name="ResumeTimerLabel" type="Label" parent="." unique_id=1127320516]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -11.5
+offset_right = 13.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_ek8ox")
 
 [connection signal="pressed" from="Setting" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Setting" to="." method="_on_setting_pressed"]

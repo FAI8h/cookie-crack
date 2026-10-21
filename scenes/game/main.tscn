@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://r4r7n8e4gac"]
 
+[ext_resource type="Script" uid="uid://cf4yl5til13w1" path="res://scripts/game/game_manager.gd" id="1_j7lav"]
 [ext_resource type="Script" uid="uid://dwea6ig7rc260" path="res://scripts/game/spawn_manager.gd" id="1_oekm8"]
 [ext_resource type="PackedScene" uid="uid://dd3g4xa0na08v" path="res://scenes/game/cookie.tscn" id="2_yd8kv"]
 [ext_resource type="PackedScene" uid="uid://dxlc1s3d52c7w" path="res://scenes/game/spawn_area.tscn" id="3_yd8kv"]
@@ -9,19 +10,26 @@
 [node name="Main" type="Node2D" unique_id=106504464]
 
 [node name="Managers" type="Node" parent="." unique_id=2068662881]
+process_mode = 3
 
 [node name="GameManager" type="Node" parent="Managers" unique_id=521765826]
+process_mode = 3
+script = ExtResource("1_j7lav")
 
-[node name="SpawnManager" type="Node" parent="Managers" unique_id=1194225268 node_paths=PackedStringArray("timer", "ui", "cookie_spawn_nodes") groups=["SpawnManager"]]
+[node name="SpawnManager" type="Node" parent="Managers" unique_id=1194225268 node_paths=PackedStringArray("timer", "cookie_spawn_nodes") groups=["SpawnManager"]]
 script = ExtResource("1_oekm8")
 cookie_scene = ExtResource("2_yd8kv")
 timer = NodePath("../../Timers/CookieSpawnTimer")
-ui = NodePath("../../CanvasLayer/UI")
 cookie_spawn_nodes = NodePath("../../Spawn/CookieSpawn")
 
 [node name="Timers" type="Node" parent="." unique_id=320851006]
+process_mode = 3
 
 [node name="CookieSpawnTimer" type="Timer" parent="Timers" unique_id=783161353]
+
+[node name="ResumeTimer" type="Timer" parent="Timers" unique_id=430692779]
+wait_time = 3.0
+one_shot = true
 
 [node name="Spawn" type="Node" parent="." unique_id=1916197828]
 
@@ -54,8 +62,6 @@ position = Vector2(76, -10)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1664437361]
 
-[node name="UI" parent="CanvasLayer" unique_id=91131668 node_paths=PackedStringArray("pause_menu") instance=ExtResource("4_uaf1y")]
-pause_menu = NodePath("../PauseMenu")
+[node name="UI" parent="CanvasLayer" unique_id=91131668 instance=ExtResource("4_uaf1y")]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1766813228 instance=ExtResource("5_iba00")]
-visible = false

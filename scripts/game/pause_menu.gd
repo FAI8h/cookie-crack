@@ -3,9 +3,13 @@ extends Control
 func _ready() -> void:
 	visible = false
 	EventBus.setting.connect(_pause)
+	EventBus.resume.connect(_resume)
 
 func _on_resume_pressed() -> void:
 	visible = false
+	EventBus.start_resume.emit()
+
+func _resume() -> void:
 	get_tree().paused = false
 
 
