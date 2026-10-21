@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://r4r7n8e4gac"]
+
+[ext_resource type="Script" uid="uid://dwea6ig7rc260" path="res://scripts/game/spawn_manager.gd" id="1_oekm8"]
+[ext_resource type="PackedScene" uid="uid://dd3g4xa0na08v" path="res://scenes/game/cookie.tscn" id="2_yd8kv"]
+[ext_resource type="PackedScene" uid="uid://dxlc1s3d52c7w" path="res://scenes/game/spawn_area.tscn" id="3_yd8kv"]
+[ext_resource type="PackedScene" uid="uid://c5ajtjruats86" path="res://scenes/game/ui.tscn" id="4_uaf1y"]
+[ext_resource type="PackedScene" uid="uid://doe2isar5qpcf" path="res://scenes/game/pause_menu.tscn" id="5_iba00"]
+
+[node name="Main" type="Node2D" unique_id=106504464]
+
+[node name="Managers" type="Node" parent="." unique_id=2068662881]
+
+[node name="GameManager" type="Node" parent="Managers" unique_id=521765826]
+
+[node name="SpawnManager" type="Node" parent="Managers" unique_id=1194225268 node_paths=PackedStringArray("timer", "ui", "cookie_spawn_nodes") groups=["SpawnManager"]]
+script = ExtResource("1_oekm8")
+cookie_scene = ExtResource("2_yd8kv")
+timer = NodePath("../../Timers/CookieSpawnTimer")
+ui = NodePath("../../CanvasLayer/UI")
+cookie_spawn_nodes = NodePath("../../Spawn/CookieSpawn")
+
+[node name="Timers" type="Node" parent="." unique_id=320851006]
+
+[node name="CookieSpawnTimer" type="Timer" parent="Timers" unique_id=783161353]
+
+[node name="Spawn" type="Node" parent="." unique_id=1916197828]
+
+[node name="Arena" type="Node" parent="Spawn" unique_id=1765760373 groups=["Arena"]]
+
+[node name="CrackerSpawn" type="Node" parent="Spawn" unique_id=1136561382]
+
+[node name="SpawnArea" parent="Spawn/CrackerSpawn" unique_id=465792049 node_paths=PackedStringArray("arena_container") instance=ExtResource("3_yd8kv")]
+position = Vector2(14, 134)
+arena_container = NodePath("../../Arena")
+
+[node name="SpawnArea2" parent="Spawn/CrackerSpawn" unique_id=1437246496 node_paths=PackedStringArray("arena_container") instance=ExtResource("3_yd8kv")]
+position = Vector2(45, 134)
+arena_container = NodePath("../../Arena")
+
+[node name="SpawnArea3" parent="Spawn/CrackerSpawn" unique_id=180453357 node_paths=PackedStringArray("arena_container") instance=ExtResource("3_yd8kv")]
+position = Vector2(76, 134)
+arena_container = NodePath("../../Arena")
+
+[node name="CookieSpawn" type="Node" parent="Spawn" unique_id=343460096]
+
+[node name="S0" type="Node2D" parent="Spawn/CookieSpawn" unique_id=1198649370]
+position = Vector2(14, -10)
+
+[node name="S1" type="Node2D" parent="Spawn/CookieSpawn" unique_id=874743170]
+position = Vector2(45, -10)
+
+[node name="S2" type="Node2D" parent="Spawn/CookieSpawn" unique_id=49649061]
+position = Vector2(76, -10)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1664437361]
+
+[node name="UI" parent="CanvasLayer" unique_id=91131668 node_paths=PackedStringArray("pause_menu") instance=ExtResource("4_uaf1y")]
+pause_menu = NodePath("../PauseMenu")
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1766813228 instance=ExtResource("5_iba00")]
+visible = false

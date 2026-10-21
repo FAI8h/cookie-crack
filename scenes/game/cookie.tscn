@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dd3g4xa0na08v"]
+
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://icon.svg" id="1_1q5gi"]
+[ext_resource type="Script" uid="uid://cxk50ro72urh2" path="res://scripts/game/cookie.gd" id="1_cmaps"]
+[ext_resource type="Resource" uid="uid://cnp12wgovxk04" path="res://resources/cookie_stats.tres" id="2_b5bjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qsy4q"]
+size = Vector2(28, 14)
+
+[node name="Cookie" type="Area2D" unique_id=1124928202]
+collision_mask = 2
+script = ExtResource("1_cmaps")
+stats = ExtResource("2_b5bjx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=903065197]
+modulate = Color(0.74689156, 0.46566713, 0, 1)
+scale = Vector2(0.21875, 0.10937501)
+texture = ExtResource("1_1q5gi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1111362600]
+shape = SubResource("RectangleShape2D_qsy4q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

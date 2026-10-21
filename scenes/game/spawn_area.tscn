@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://dxlc1s3d52c7w"]
+
+[ext_resource type="Script" uid="uid://ck3lfl3ablo8l" path="res://scripts/game/spawn_area.gd" id="1_id1o8"]
+[ext_resource type="PackedScene" uid="uid://crdqsiooqrke6" path="res://scenes/player/cracker.tscn" id="2_pekj6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6ydf"]
+size = Vector2(28, 52)
+
+[node name="SpawnArea" type="Area2D" unique_id=465792049 groups=["SpawnArea"]]
+z_index = -1
+script = ExtResource("1_id1o8")
+cracker_scene = ExtResource("2_pekj6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=754195023]
+shape = SubResource("RectangleShape2D_p6ydf")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=65894149]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -26.0
+offset_right = 14.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.88695186, 0.13185751, 0.34283486, 0.39607844)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

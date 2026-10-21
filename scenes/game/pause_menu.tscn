@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://doe2isar5qpcf"]
+
+[ext_resource type="Theme" uid="uid://4h3af3ccm221" path="res://resources/pause_menu.tres" id="1_aj248"]
+[ext_resource type="Script" uid="uid://b5g4ia73ke77t" path="res://scripts/game/pause_menu.gd" id="1_k8vbq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qsy4q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="PauseMenu" type="Control" unique_id=1766813228]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k8vbq")
+
+[node name="Panel" type="Panel" parent="." unique_id=96156658]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qsy4q")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1236300041]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -75.0
+offset_right = 24.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_aj248")
+theme_override_constants/separation = 2
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=389878604]
+layout_mode = 2
+text = "RESUME"
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=713280622]
+layout_mode = 2
+text = "RESTART"
+
+[node name="MainMenu" type="Button" parent="Panel/VBoxContainer" unique_id=631857892]
+layout_mode = 2
+disabled = true
+text = "MAIN MENU"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="." method="_on_main_menu_pressed"]

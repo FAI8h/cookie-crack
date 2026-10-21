@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Stats" format=3 uid="uid://cnp12wgovxk04"]
+
+[ext_resource type="Script" uid="uid://m7o2kgjdj85q" path="res://resources/stats.gd" id="1_mgm5j"]
+
+[resource]
+script = ExtResource("1_mgm5j")
+health = 1.0
+speed = 60.0
+spawn_interval = 1.5
+attack_damage = 1.0
+metadata/_custom_type_script = "uid://m7o2kgjdj85q"
