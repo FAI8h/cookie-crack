@@ -51,7 +51,6 @@ text = "RESTART"
 
 [node name="MainMenu" type="Button" parent="Panel/VBoxContainer" unique_id=631857892]
 layout_mode = 2
-disabled = true
 text = "MAIN MENU"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

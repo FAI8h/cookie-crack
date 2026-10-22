@@ -1,0 +1,120 @@
+[gd_scene format=3 uid="uid://bmk4vui5ncr8b"]
+
+[ext_resource type="Script" uid="uid://cr7a3a2rjk2am" path="res://scripts/game/main_menu.gd" id="1_3r4tm"]
+[ext_resource type="Texture2D" uid="uid://b3wa7pij4nw1w" path="res://assets/play-icon.svg" id="1_ngy02"]
+[ext_resource type="Texture2D" uid="uid://djd3g6mk774yi" path="res://assets/settings-icon.svg" id="2_e66b0"]
+[ext_resource type="Texture2D" uid="uid://cd3bm8c8r3fw" path="res://assets/exit-icon.svg" id="3_e66b0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gfgjs"]
+bg_color = Color(1, 0.7019608, 0.2784314, 1)
+border_width_bottom = 2
+border_color = Color(0.63073444, 0.40222678, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e66b0"]
+bg_color = Color(1, 0.7019608, 0.2784314, 1)
+border_width_bottom = 2
+border_color = Color(0.63073444, 0.40222678, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpthd"]
+bg_color = Color(1, 0.7019608, 0.2784314, 1)
+border_width_bottom = 2
+border_color = Color(0.63073444, 0.40222678, 0, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r4tm"]
+bg_color = Color(1, 0.7019608, 0.2784314, 1)
+border_width_top = 2
+border_color = Color(0.6313726, 0.40392157, 0, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bto60"]
+bg_color = Color(0.101960786, 0.16862746, 0.30980393, 1)
+
+[sub_resource type="Theme" id="Theme_qsy4q"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.7882353, 0.7882353, 0.7882353, 1)
+Button/colors/font_hover_color = Color(0.89720833, 0.90633976, 0.9017612, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/font_sizes/font_size = 6
+Button/fonts/font = null
+Button/styles/disabled = SubResource("StyleBoxFlat_gfgjs")
+Button/styles/hover = SubResource("StyleBoxFlat_e66b0")
+Button/styles/normal = SubResource("StyleBoxFlat_fpthd")
+Button/styles/pressed = SubResource("StyleBoxFlat_3r4tm")
+Panel/styles/panel = SubResource("StyleBoxFlat_bto60")
+
+[node name="MainMenu" type="Control" unique_id=2143038597]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_qsy4q")
+script = ExtResource("1_3r4tm")
+
+[node name="Panel" type="Panel" parent="." unique_id=1144964377]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=256235296]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -20.5
+offset_right = 22.0
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 2
+
+[node name="Play" type="Button" parent="VBoxContainer" unique_id=915222272]
+layout_mode = 2
+text = "PLAY"
+icon = ExtResource("1_ngy02")
+alignment = 0
+expand_icon = true
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=943561367]
+layout_mode = 2
+text = "SETTINGS"
+icon = ExtResource("2_e66b0")
+alignment = 0
+expand_icon = true
+
+[node name="Exit" type="Button" parent="VBoxContainer" unique_id=1697209952]
+layout_mode = 2
+text = "EXIT"
+icon = ExtResource("3_e66b0")
+alignment = 0
+expand_icon = true
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]

@@ -10,3 +10,5 @@ signal start_resume
 
 signal setting
 signal time_left(sec : int)
+
+signal combo()

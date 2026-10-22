@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c86uayvcrkqp3" path="res://scripts/game/ui.gd" id="1_w1udo"]
 [ext_resource type="Script" uid="uid://g4a7tu4eke3v" path="res://scripts/game/score.gd" id="2_jbjmg"]
-[ext_resource type="Texture2D" uid="uid://bfwyv0if6oegj" path="res://assets/settings-svgrepo-com.svg" id="3_jbjmg"]
+[ext_resource type="Texture2D" uid="uid://djd3g6mk774yi" path="res://assets/settings-icon.svg" id="3_se3ib"]
 [ext_resource type="Script" uid="uid://cr6o4nuahk7rv" path="res://scripts/game/resume_timer_label.gd" id="4_ek8ox"]
+[ext_resource type="Script" uid="uid://87i2peg40jud" path="res://scripts/game/combo_label.gd" id="5_jmhhc"]
+[ext_resource type="Script" uid="uid://jpqdv4jt0xkj" path="res://scripts/game/combo_container.gd" id="5_se3ib"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w15o4"]
 content_margin_left = 4.0
@@ -16,6 +18,11 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
+
+[sub_resource type="Theme" id="Theme_se3ib"]
+Label/colors/font_color = Color(0.7971725, 0.7960142, 0, 1)
+Label/font_sizes/font_size = 4
+Label/fonts/font = null
 
 [node name="UI" type="Control" unique_id=91131668]
 layout_mode = 3
@@ -44,6 +51,7 @@ offset_left = -10.0
 offset_bottom = 9.0
 grow_horizontal = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_w15o4")
+flat = true
 
 [node name="TextureRect" type="TextureRect" parent="Setting" unique_id=106674956]
 modulate = Color(0, 0, 0, 1)
@@ -55,10 +63,10 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -10.0
 offset_top = -4.5
-offset_bottom = 4.5
+offset_bottom = 5.5
 grow_horizontal = 0
 grow_vertical = 2
-texture = ExtResource("3_jbjmg")
+texture = ExtResource("3_se3ib")
 expand_mode = 1
 
 [node name="ResumeTimerLabel" type="Label" parent="." unique_id=1127320516]
@@ -79,5 +87,87 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("4_ek8ox")
 
-[connection signal="pressed" from="Setting" to="." method="_on_button_pressed"]
+[node name="ComboContainer" type="Control" parent="." unique_id=1336153622 node_paths=PackedStringArray("combo_labels")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme_se3ib")
+script = ExtResource("5_se3ib")
+combo_labels = [NodePath("ComboLabel1"), NodePath("ComboLabel2"), NodePath("ComboLabel3"), NodePath("ComboLabel4")]
+
+[node name="ComboLabel1" type="Label" parent="ComboContainer" unique_id=272899850]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -4.0
+offset_right = 13.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_jmhhc")
+
+[node name="ComboLabel2" type="Label" parent="ComboContainer" unique_id=1648990339]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -6.0
+offset_right = 21.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(21, 6)
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_jmhhc")
+
+[node name="ComboLabel3" type="Label" parent="ComboContainer" unique_id=875561941]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -6.0
+offset_right = 21.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(21, 6)
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_jmhhc")
+
+[node name="ComboLabel4" type="Label" parent="ComboContainer" unique_id=230218592]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -6.0
+offset_right = 21.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(21, 6)
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_jmhhc")
+
 [connection signal="pressed" from="Setting" to="." method="_on_setting_pressed"]

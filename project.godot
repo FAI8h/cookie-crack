@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="carck-the-cookie"
-run/main_scene="uid://r4r7n8e4gac"
+run/main_scene="uid://bmk4vui5ncr8b"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 

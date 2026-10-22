@@ -38,7 +38,7 @@ one_shot = true
 [node name="CrackerSpawn" type="Node" parent="Spawn" unique_id=1136561382]
 
 [node name="SpawnArea" parent="Spawn/CrackerSpawn" unique_id=465792049 node_paths=PackedStringArray("arena_container") instance=ExtResource("3_yd8kv")]
-position = Vector2(14, 134)
+position = Vector2(15, 134)
 arena_container = NodePath("../../Arena")
 
 [node name="SpawnArea2" parent="Spawn/CrackerSpawn" unique_id=1437246496 node_paths=PackedStringArray("arena_container") instance=ExtResource("3_yd8kv")]
@@ -46,19 +46,19 @@ position = Vector2(45, 134)
 arena_container = NodePath("../../Arena")
 
 [node name="SpawnArea3" parent="Spawn/CrackerSpawn" unique_id=180453357 node_paths=PackedStringArray("arena_container") instance=ExtResource("3_yd8kv")]
-position = Vector2(76, 134)
+position = Vector2(75, 134)
 arena_container = NodePath("../../Arena")
 
 [node name="CookieSpawn" type="Node" parent="Spawn" unique_id=343460096]
 
 [node name="S0" type="Node2D" parent="Spawn/CookieSpawn" unique_id=1198649370]
-position = Vector2(14, -10)
+position = Vector2(15, -10)
 
 [node name="S1" type="Node2D" parent="Spawn/CookieSpawn" unique_id=874743170]
 position = Vector2(45, -10)
 
 [node name="S2" type="Node2D" parent="Spawn/CookieSpawn" unique_id=49649061]
-position = Vector2(76, -10)
+position = Vector2(75, -10)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1664437361]
 

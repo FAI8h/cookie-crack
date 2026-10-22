@@ -19,6 +19,7 @@ func _spawn() -> void:
 	for point in cookie_spawn_point:
 		var cookie := cookie_scene.instantiate() as Cookie
 		cookie_spawn_point[_pick_random()].add_child(cookie)
+		await get_tree().create_timer(0.3).timeout
 
 func _pick_random() -> int:
 	return randi() % 3

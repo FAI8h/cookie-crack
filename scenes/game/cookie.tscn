@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cnp12wgovxk04" path="res://resources/cookie_stats.tres" id="2_b5bjx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsy4q"]
-size = Vector2(28, 14)
+size = Vector2(30, 14)
 
 [node name="Cookie" type="Area2D" unique_id=1124928202]
 collision_mask = 2
@@ -14,7 +14,7 @@ stats = ExtResource("2_b5bjx")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=903065197]
 modulate = Color(0.74689156, 0.46566713, 0, 1)
-scale = Vector2(0.21875, 0.10937501)
+scale = Vector2(0.234375, 0.10937501)
 texture = ExtResource("1_1q5gi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1111362600]

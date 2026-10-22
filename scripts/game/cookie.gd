@@ -23,8 +23,9 @@ func _physics_process(_delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 
 	if body is Cracker:
+		EventBus.combo.emit()
 		queue_free()
 		body.queue_free()
-		EventBus.cracked.emit(1)
+		EventBus.cracked.emit(5)
 	
 	pass
