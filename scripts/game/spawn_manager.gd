@@ -1,7 +1,7 @@
 extends Node
 class_name SpawnManager
 
-@export var cookie_interval : float = .8
+@export var cookie_interval : float = .6
 @export var cookie_scene : PackedScene
 @export var timer : Timer
 

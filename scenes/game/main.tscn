@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dxlc1s3d52c7w" path="res://scenes/game/spawn_area.tscn" id="3_yd8kv"]
 [ext_resource type="PackedScene" uid="uid://c5ajtjruats86" path="res://scenes/game/ui.tscn" id="4_uaf1y"]
 [ext_resource type="PackedScene" uid="uid://doe2isar5qpcf" path="res://scenes/game/pause_menu.tscn" id="5_iba00"]
+[ext_resource type="PackedScene" uid="uid://wjuphxda7dkj" path="res://scenes/game/game_over.tscn" id="7_g38uy"]
 
 [node name="Main" type="Node2D" unique_id=106504464]
 
@@ -65,3 +66,5 @@ position = Vector2(75, -10)
 [node name="UI" parent="CanvasLayer" unique_id=91131668 instance=ExtResource("4_uaf1y")]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1766813228 instance=ExtResource("5_iba00")]
+
+[node name="GameOver" parent="CanvasLayer" unique_id=1378836983 instance=ExtResource("7_g38uy")]

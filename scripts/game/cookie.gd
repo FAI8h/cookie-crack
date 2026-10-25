@@ -27,5 +27,3 @@ func _on_body_entered(body: Node2D) -> void:
 		queue_free()
 		body.queue_free()
 		EventBus.cracked.emit(5)
-	
-	pass

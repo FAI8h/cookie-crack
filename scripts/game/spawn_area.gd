@@ -30,4 +30,4 @@ func _set_position(mouse_pos : Vector2, unit) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if area is Cookie:
-		get_tree().quit()
+		EventBus.died.emit()

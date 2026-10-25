@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 EventBus="*uid://p5qbtjyd13vx"
+Signal_Debugger="*uid://cfmp1y4munuj4"
 
 [display]
 
@@ -26,6 +27,11 @@ window/size/viewport_height=160
 window/size/window_width_override=360
 window/size/window_height_override=640
 window/stretch/mode="canvas_items"
+window/handheld/orientation=1
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SignalVisualizer/plugin.cfg")
 
 [file_customization]
 
@@ -58,3 +64,4 @@ up={
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+textures/vram_compression/import_etc2_astc=true
