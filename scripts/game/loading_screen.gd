@@ -3,15 +3,14 @@ extends CanvasLayer
 @export var animation_player : AnimationPlayer
 
 func _ready() -> void:
-    await  animation_player.animation_finished
-    EventBus.loading_screen_ready.emit()
+	await  animation_player.animation_finished
+	EventBus.loading_screen_ready.emit()
 
 
 func _on_progress_changed(_new_val : float) -> void:
-    pass
+	pass
 
 func _on_load_finished() -> void:
-    animation_player.play_backwards("transition")
-    await animation_player.animation_finished
-    queue_free()
-    pass
+	animation_player.play_backwards("transition")
+	await animation_player.animation_finished
+	queue_free()

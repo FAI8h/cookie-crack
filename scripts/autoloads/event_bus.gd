@@ -2,9 +2,6 @@ extends Node
 
 signal cracked(score : int)
 
-signal start
-signal resume
-signal restart
 signal main_menu
 signal start_resume
 signal game_over(score: int)
@@ -22,4 +19,13 @@ signal load_finished
 signal loading_screen_ready
 
 #endregion Scene
+
+
+signal start
+signal pause
+signal resume
+signal retry
+signal restart
+
+
 

@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://db4rl42jy4wdw"]
 
+[ext_resource type="Script" uid="uid://dk67jujajp1hi" path="res://scripts/game/loading_screen.gd" id="1_xcyph"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pbvke"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -49,7 +51,10 @@ _data = {
 &"transition": SubResource("Animation_xcyph")
 }
 
-[node name="LoadingScreen" type="CanvasLayer" unique_id=1699602276]
+[node name="LoadingScreen" type="CanvasLayer" unique_id=1699602276 node_paths=PackedStringArray("animation_player")]
+layer = 10
+script = ExtResource("1_xcyph")
+animation_player = NodePath("AnimationPlayer")
 
 [node name="Panel" type="Panel" parent="." unique_id=1769233088]
 anchors_preset = 15

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 EventBus="*uid://p5qbtjyd13vx"
 Signal_Debugger="*uid://cfmp1y4munuj4"
+SceneLoader="*uid://dccajduhjf66"
 
 [display]
 

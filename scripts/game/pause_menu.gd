@@ -20,7 +20,7 @@ func _on_restart_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://scenes/game/main_menu.tscn")
+	EventBus.main_menu.emit()
 
 func _pause() -> void:
 	visible = true
