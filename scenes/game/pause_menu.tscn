@@ -32,25 +32,28 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -24.0
-offset_top = -75.0
-offset_right = 24.0
-offset_bottom = -40.0
+offset_left = -157.0
+offset_top = -492.0
+offset_right = 157.0
+offset_bottom = -283.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("1_aj248")
-theme_override_constants/separation = 2
+theme_override_constants/separation = 8
 
 [node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=389878604]
 layout_mode = 2
+size_flags_vertical = 3
 text = "RESUME"
 
 [node name="Restart" type="Button" parent="Panel/VBoxContainer" unique_id=713280622]
 layout_mode = 2
+size_flags_vertical = 3
 text = "RESTART"
 
 [node name="MainMenu" type="Button" parent="Panel/VBoxContainer" unique_id=631857892]
 layout_mode = 2
+size_flags_vertical = 3
 text = "MAIN MENU"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_resume_pressed"]

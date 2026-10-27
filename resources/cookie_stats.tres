@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_mgm5j")
 health = 1.0
-speed = 60.0
+speed = 450.0
 spawn_interval = 1.5
 attack_damage = 1.0
 metadata/_custom_type_script = "uid://m7o2kgjdj85q"
