@@ -5,6 +5,8 @@ var fired : bool = false
 
 @onready var resume_timer : Timer = $"../../Timers/ResumeTimer"
 
+@export var arena : Node
+
 func _ready() -> void:
 	resume_timer.wait_time = 3.0
 	resume_timer.autostart = false
@@ -12,6 +14,9 @@ func _ready() -> void:
 	EventBus.start_resume.connect(start_resume_timer)
 	EventBus.cracked.connect(_save_score)
 	EventBus.died.connect(get_score)
+	EventBus.main_menu.connect(_on_main_menu_pressed)
+	EventBus.restart.connect(_on_restart_pressed)
+	EventBus.retry.connect(_on_retry_pressed)
 
 func _process(_delta: float) -> void:
 	if resume_timer.time_left > 0.0:
@@ -30,3 +35,16 @@ func get_score() -> void:
 	if not fired:
 		EventBus.game_over.emit(score)
 		fired = not fired
+
+func _on_main_menu_pressed() -> void:
+	if arena.get_child_count() > 0:
+		Utilities.clear_all_children(arena)
+
+func _on_restart_pressed() -> void:
+	if arena.get_child_count() > 0:
+		Utilities.clear_all_children(arena)
+
+func _on_retry_pressed() -> void:
+	if arena.get_child_count() > 0:
+		Utilities.clear_all_children(arena)
+

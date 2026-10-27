@@ -14,9 +14,10 @@
 [node name="Managers" type="Node" parent="." unique_id=2068662881]
 process_mode = 3
 
-[node name="GameManager" type="Node" parent="Managers" unique_id=521765826]
+[node name="GameManager" type="Node" parent="Managers" unique_id=521765826 node_paths=PackedStringArray("arena")]
 process_mode = 3
 script = ExtResource("1_j7lav")
+arena = NodePath("../../Spawn/Arena")
 
 [node name="SpawnManager" type="Node" parent="Managers" unique_id=1194225268 node_paths=PackedStringArray("timer", "cookie_spawn_nodes") groups=["SpawnManager"]]
 script = ExtResource("1_oekm8")

@@ -2,7 +2,7 @@ extends Control
 	
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/game/main.tscn")
+	SceneLoader.load_scene("res://scenes/game/main.tscn")
 
 
 func _on_settings_pressed() -> void:

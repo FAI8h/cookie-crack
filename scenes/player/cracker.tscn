@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://dmfciul8xrph2" path="res://resources/cracker_stats.tres" id="2_x54xh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbehv"]
-size = Vector2(136.98631, 128.44037)
+size = Vector2(127.85389, 128.44037)
 
 [node name="Cracker" type="CharacterBody2D" unique_id=66446470 groups=["Cracker"]]
 scale = Vector2(0.219, 0.109)
@@ -14,7 +14,7 @@ script = ExtResource("1_rbehv")
 stats = ExtResource("2_x54xh")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1739881721]
-scale = Vector2(1.0707762, 1)
+scale = Vector2(0.99914384, 1)
 texture = ExtResource("1_ofgc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=277360717]
