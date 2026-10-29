@@ -20,6 +20,7 @@ script = ExtResource("1_j7lav")
 arena = NodePath("../../Spawn/Arena")
 
 [node name="SpawnManager" type="Node" parent="Managers" unique_id=1194225268 node_paths=PackedStringArray("timer", "cookie_spawn_nodes") groups=["SpawnManager"]]
+process_mode = 3
 script = ExtResource("1_oekm8")
 cookie_scene = ExtResource("2_yd8kv")
 timer = NodePath("../../Timers/CookieSpawnTimer")
@@ -58,16 +59,15 @@ arena_container = NodePath("../../Arena")
 [node name="CookieSpawn" type="Node" parent="Spawn" unique_id=343460096]
 
 [node name="S0" type="Node2D" parent="Spawn/CookieSpawn" unique_id=1198649370]
-position = Vector2(120, -10)
+position = Vector2(120, -141)
 
 [node name="S1" type="Node2D" parent="Spawn/CookieSpawn" unique_id=874743170]
-position = Vector2(360, -10)
+position = Vector2(360, -141)
 
 [node name="S2" type="Node2D" parent="Spawn/CookieSpawn" unique_id=49649061]
-position = Vector2(600, -10)
+position = Vector2(600, -141)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1664437361]
-visible = false
 
 [node name="UI" parent="CanvasLayer" unique_id=91131668 instance=ExtResource("4_uaf1y")]
 
