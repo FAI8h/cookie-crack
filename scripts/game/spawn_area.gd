@@ -5,7 +5,7 @@ class_name SpawnArea
 @export var cracker_scene : PackedScene
 
 func _ready() -> void:
-	# print("cracker scene loaded : ",cracker_scene)
+	EventBus.god_mode.connect(god_mode)
 	pass
 
 func spawn(unit) -> void:
@@ -31,3 +31,6 @@ func _set_position(mouse_pos : Vector2, unit) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area is Cookie:
 		EventBus.died.emit()
+
+func god_mode() -> void:
+	collision_mask = 2

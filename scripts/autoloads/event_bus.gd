@@ -27,5 +27,9 @@ signal resume
 signal retry
 signal restart
 
+#region testing stuff
+signal god_mode
+
+#endregion testing stuff
 
 
