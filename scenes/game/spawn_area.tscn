@@ -29,5 +29,7 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.88695186, 0.13185751, 0.34283486, 0.39607844)
 
+[node name="Timer" type="Timer" parent="." unique_id=252302297]
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="input_event" from="." to="." method="_on_input_event"]
