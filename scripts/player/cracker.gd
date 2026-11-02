@@ -11,3 +11,7 @@ func _process(_delta: float) -> void:
     if Input.is_action_pressed("up"):
         velocity = Vector2.UP * SPEED
     move_and_slide()
+
+
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+    queue_free()

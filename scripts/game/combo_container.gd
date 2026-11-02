@@ -1,17 +1,24 @@
 extends Control
 
 @export var combo_labels: Array[Label]
-
+var theme_epic : Theme = preload("uid://7hpaio81mote")
+var theme_mid : Theme = preload("uid://c4k7mbxurm1bk")
 var next_label := 0
 var combo : int
 
 func _ready() -> void:
 	EventBus.combo.connect(show_combo)
 
-
-
+func _change_combo_theme() -> void:
+	
+	pass
 func show_combo() -> void:
 	combo += 1
+	if combo >= 50 and combo <= 100:
+		theme = theme_epic
+	elif combo > 100:		
+		theme = theme_mid
+	# print("curr theme : ", )
 	var label := combo_labels[next_label]
 	next_label = (next_label + 1) % combo_labels.size()
 

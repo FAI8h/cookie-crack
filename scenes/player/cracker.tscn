@@ -9,6 +9,7 @@ size = Vector2(230, 128)
 
 [node name="Cracker" type="CharacterBody2D" unique_id=66446470 groups=["Cracker"]]
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_rbehv")
 stats = ExtResource("2_x54xh")
 
@@ -18,3 +19,8 @@ texture = ExtResource("1_ofgc0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=55808721]
 shape = SubResource("RectangleShape2D_04pra")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=520443652]
+rect = Rect2(-115, 57, 230, 7)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

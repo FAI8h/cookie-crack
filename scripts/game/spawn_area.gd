@@ -5,6 +5,7 @@ class_name SpawnArea
 @export var cracker_scene : PackedScene
 
 @onready var timer : Timer = $Timer
+@export var interval : float = 0.2
 
 var can_spawn : bool = true
 
@@ -12,7 +13,7 @@ var can_spawn : bool = true
 var is_god_mode : bool = false
 
 func _ready() -> void:
-	timer.wait_time = 0.2
+	timer.wait_time = interval
 	timer.autostart = false
 	timer.timeout.connect(_on_timer_timeout)
 
@@ -47,6 +48,13 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is Cookie:
 		EventBus.died.emit()
 
+func _on_timer_timeout () -> void:
+	can_spawn = true;
+
+
+func _check_spawn_position() -> void:
+	pass
+
 func toggle_god_mode() -> void:
 	god_mode()
 
@@ -58,15 +66,7 @@ func god_mode() -> void:
 		is_god_mode = false
 		collision_mask = 1
 
-func _on_timer_timeout () -> void:
-	can_spawn = true;
-
-
-
-func _check_spawn_position() -> void:
-	pass
-
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("God Mode"):
+	if event.is_action_released("God Mode"):
 		god_mode()
 			

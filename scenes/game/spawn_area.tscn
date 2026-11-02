@@ -10,6 +10,7 @@ size = Vector2(230, 420)
 z_index = -1
 script = ExtResource("1_id1o8")
 cracker_scene = ExtResource("2_pekj6")
+interval = 0.25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=754195023]
 shape = SubResource("RectangleShape2D_p6ydf")

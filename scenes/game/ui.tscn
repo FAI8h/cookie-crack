@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cr6o4nuahk7rv" path="res://scripts/game/resume_timer_label.gd" id="4_ek8ox"]
 [ext_resource type="Script" uid="uid://87i2peg40jud" path="res://scripts/game/combo_label.gd" id="5_jmhhc"]
 [ext_resource type="Script" uid="uid://jpqdv4jt0xkj" path="res://scripts/game/combo_container.gd" id="5_se3ib"]
+[ext_resource type="Theme" uid="uid://bldiiirm1q2g5" path="res://resources/combo_basic.tres" id="6_crmeh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w15o4"]
 content_margin_left = 4.0
@@ -33,8 +34,8 @@ script = ExtResource("1_w1udo")
 
 [node name="Score" type="Label" parent="." unique_id=697061849]
 layout_mode = 1
-offset_right = 4.0
-offset_bottom = 9.0
+offset_right = 31.0
+offset_bottom = 74.0
 text = "0"
 script = ExtResource("2_jbjmg")
 
@@ -89,6 +90,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("6_crmeh")
 script = ExtResource("5_se3ib")
 combo_labels = [NodePath("ComboLabel1"), NodePath("ComboLabel2"), NodePath("ComboLabel3"), NodePath("ComboLabel4")]
 
@@ -99,6 +101,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "COMBO x5"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("5_jmhhc")
