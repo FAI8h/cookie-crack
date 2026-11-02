@@ -9,7 +9,7 @@ class_name SpawnArea
 var can_spawn : bool = true
 
 func _ready() -> void:
-	timer.wait_time = 0.5
+	timer.wait_time = 0.2
 	timer.autostart = false
 	timer.timeout.connect(_on_timer_timeout)
 

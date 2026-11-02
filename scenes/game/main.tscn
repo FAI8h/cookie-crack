@@ -18,6 +18,7 @@ process_mode = 3
 process_mode = 3
 script = ExtResource("1_j7lav")
 arena = NodePath("../../Spawn/Arena")
+god_mode = true
 
 [node name="SpawnManager" type="Node" parent="Managers" unique_id=1194225268 node_paths=PackedStringArray("timer", "cookie_spawn_nodes") groups=["SpawnManager"]]
 process_mode = 3

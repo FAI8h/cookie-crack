@@ -81,9 +81,11 @@ script = ExtResource("4_ek8ox")
 
 [node name="ComboContainer" type="Control" parent="." unique_id=1336153622 node_paths=PackedStringArray("combo_labels")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -92,15 +94,9 @@ combo_labels = [NodePath("ComboLabel1"), NodePath("ComboLabel2"), NodePath("Comb
 
 [node name="ComboLabel1" type="Label" parent="ComboContainer" unique_id=272899850]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -13.0
-offset_top = -36.0
-offset_right = 13.0
-offset_bottom = 36.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 horizontal_alignment = 1
@@ -109,15 +105,9 @@ script = ExtResource("5_jmhhc")
 
 [node name="ComboLabel2" type="Label" parent="ComboContainer" unique_id=1648990339]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -6.0
-offset_right = 21.0
-offset_bottom = 6.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(21, 6)
@@ -127,15 +117,9 @@ script = ExtResource("5_jmhhc")
 
 [node name="ComboLabel3" type="Label" parent="ComboContainer" unique_id=875561941]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -6.0
-offset_right = 21.0
-offset_bottom = 6.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(21, 6)
@@ -145,15 +129,9 @@ script = ExtResource("5_jmhhc")
 
 [node name="ComboLabel4" type="Label" parent="ComboContainer" unique_id=230218592]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -21.0
-offset_top = -36.0
-offset_right = 21.0
-offset_bottom = 36.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(21, 6)
