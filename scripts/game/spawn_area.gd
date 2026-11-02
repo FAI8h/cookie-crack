@@ -8,12 +8,15 @@ class_name SpawnArea
 
 var can_spawn : bool = true
 
+@onready var layer = 1
+var is_god_mode : bool = false
+
 func _ready() -> void:
 	timer.wait_time = 0.2
 	timer.autostart = false
 	timer.timeout.connect(_on_timer_timeout)
 
-	EventBus.god_mode.connect(god_mode)
+	EventBus.god_mode.connect(toggle_god_mode)
 	pass
 
 func spawn(unit) -> void:
@@ -44,8 +47,16 @@ func _on_area_entered(area: Area2D) -> void:
 	if area is Cookie:
 		EventBus.died.emit()
 
+func toggle_god_mode() -> void:
+	god_mode()
+
 func god_mode() -> void:
-	collision_mask = 2
+	if not is_god_mode :
+		is_god_mode = true
+		collision_mask = 2
+	else:
+		is_god_mode = false
+		collision_mask = 1
 
 func _on_timer_timeout () -> void:
 	can_spawn = true;
@@ -54,3 +65,8 @@ func _on_timer_timeout () -> void:
 
 func _check_spawn_position() -> void:
 	pass
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("God Mode"):
+		god_mode()
+			
