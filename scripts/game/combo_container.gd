@@ -7,6 +7,7 @@ var next_label := 0
 var combo : int
 
 func _ready() -> void:
+	_clear_all_child_text()
 	EventBus.combo.connect(show_combo)
 
 func _change_combo_theme() -> void:
@@ -24,7 +25,7 @@ func show_combo() -> void:
 
 	label.text = "COMBO x%d" % combo
 	label.scale = Vector2.ONE
-	label.position.y = 74.0
+	label.position.y = 609.5
 	label.modulate.a = 1.0
 	label.visible = true
 	label.pivot_offset = label.size / 2.0
@@ -32,7 +33,16 @@ func show_combo() -> void:
 
 	var tween := create_tween()
 	tween.tween_property(label, "scale", Vector2(1.3, 1.3), 0.12)
-	tween.tween_property(label, "position:y", 54.0, 0.4).set_ease(tween.EASE_IN)
+	tween.tween_property(label, "position:y", 500.0, 0.4).set_ease(tween.EASE_IN)
+	tween.tween_property(label, "scale", Vector2.ONE, 0.12)
 	tween.tween_interval(0.3)
 	tween.tween_property(label, "modulate:a", 0.0, 0.3)
 	tween.tween_callback(func(): label.visible = false)
+
+
+func _clear_all_child_text() -> void:
+	var children : Array[Node] = get_children()
+
+	for child : Label in children:
+		child.text = ""
+	
